@@ -95,14 +95,14 @@ extension OperationTableViewCell: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        guard let tableViewKind = getTableViewKind(of: tableView) else { return 0 }
+        guard let tableViewKind = getKind(of: tableView) else { return 0 }
         
         switch tableViewKind {
             
         case .instructions:
-            return 12
+            return section == 0 ? 12 : 1
         case .actions:
-            return 6
+            return section == 0 ? 6 : 1
         }
     }
     
@@ -112,21 +112,21 @@ extension OperationTableViewCell: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let tableViewKind = getTableViewKind(of: tableView) else { return UITableViewCell() }
+        guard let tableViewKind = getKind(of: tableView) else { return UITableViewCell() }
         
         switch tableViewKind {
             
         case .instructions:
             let cell = indexPath.section == 0 ? instructionsTableView.dequeueReusableCell(withIdentifier: instructionCellIdentifier, for: indexPath) :
                 instructionsTableView.dequeueReusableCell(withIdentifier: instructionToolboxCellIdentifier, for: indexPath)
-            instructionsTableView.layoutSubviews()
+            instructionsTableView.setNeedsLayout() //layoutSubviews()
             self.tableView?.reloadData()
             return cell
             
         case .actions:
             let cell = indexPath.section == 0 ? actionsTableView.dequeueReusableCell(withIdentifier: actionCellIdentifier, for: indexPath) :
                 actionsTableView.dequeueReusableCell(withIdentifier: actionToolboxCellIdentifier, for: indexPath)
-            actionsTableView.layoutSubviews()
+            actionsTableView.setNeedsLayout() //layoutSubviews()
             self.tableView?.reloadData()
             return cell
         }
@@ -140,7 +140,7 @@ extension OperationTableViewCell: UITableViewDelegate, UITableViewDataSource {
         return 0
     }
     
-    func getTableViewKind(of tableView: UITableView) -> TableViewKind? {
+    func getKind(of tableView: UITableView) -> TableViewKind? {
         
         guard let tableViewRestorationIdentifier = tableView.restorationIdentifier,
             let tableViewKind = TableViewKind(rawValue: tableViewRestorationIdentifier) else { return nil }

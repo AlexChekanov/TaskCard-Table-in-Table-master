@@ -21,8 +21,8 @@ class AGTableView: UITableView {
         self.keyboardDismissMode = .onDrag
         self.tableFooterView = UIView(frame: .zero)
         self.tableHeaderView = UIView(frame: .zero)
-        self.sectionFooterHeight = 0
-        self.sectionHeaderHeight = 0
+//        self.sectionFooterHeight = 0
+//        self.sectionHeaderHeight = 0
     }
     
     override open func layoutSubviews() {
@@ -30,10 +30,10 @@ class AGTableView: UITableView {
         
         if self.heightConstraint != nil {
             self.heightConstraint.constant = self.contentSize.height
-            print(heightConstraint.constant)
+//            print(heightConstraint.constant)
         }
         else{
-            print("Set a heightConstraint to set cocontentSize with same")
+//            print("Set a heightConstraint to set cocontentSize with same")
         }
     }
     
@@ -52,6 +52,8 @@ class AGTableView: UITableView {
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
+        
+        setNeedsLayout()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: { [weak self] in
             self?.reloadData()
