@@ -50,12 +50,14 @@ class AGTableView: UITableView {
         }
     }
     
+    
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         
         setNeedsLayout()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: { [weak self] in
+            
             self?.reloadData()
         })
     }

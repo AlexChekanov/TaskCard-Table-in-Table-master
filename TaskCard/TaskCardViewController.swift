@@ -39,14 +39,23 @@ extension TaskCardViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-//    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-//        super.traitCollectionDidChange(previousTraitCollection)
-//
-//        operationsTableView.beginUpdates()
-//        operationsTableView.endUpdates()
-//
-//        operationsTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableViewScrollPosition.top, animated: true)
-//
-//    }
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        operationsTableView.reloadData()
+        operationsTableView.endUpdates()
+        
+        operationsTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableViewScrollPosition.top, animated: true)
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        operationsTableView.beginUpdates()
+        operationsTableView.endUpdates()
+    }
+    
+    
 }
+
 

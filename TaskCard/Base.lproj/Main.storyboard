@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,7 +21,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07N-rE-dAI" userLabel="Operation Table View">
                                 <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
-                                <color key="backgroundColor" cyan="1" magenta="0.0" yellow="0.20000000000000001" black="0.0" alpha="0.13514019690000001" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <viewLayoutGuide key="safeArea" id="hew-Z3-ibS"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="operation" rowHeight="213" id="m9r-Fu-a0n" userLabel="Operation Table View Cell" customClass="OperationTableViewCell" customModule="TaskCard" customModuleProvider="target">
@@ -33,17 +32,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="a9W-4W-vw1">
-                                                    <rect key="frame" x="15" y="11" width="706" height="200"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="736" height="212.66666666666666"/>
                                                     <subviews>
                                                         <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="instructions" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vad-Cd-pgM" userLabel="Instructions Table View" customClass="AGTableView" customModule="TaskCard" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="349" height="200"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="364" height="200"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="200" id="RZ2-wV-86n"/>
                                                             </constraints>
                                                         </tableView>
                                                         <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="actions" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSn-G4-poh" userLabel="Actions Table View" customClass="AGTableView" customModule="TaskCard" customModuleProvider="target">
-                                                            <rect key="frame" x="357" y="0.0" width="349" height="200"/>
+                                                            <rect key="frame" x="372" y="0.0" width="364" height="200"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="200" id="kCI-WF-f81"/>
@@ -57,19 +56,19 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="a9W-4W-vw1" secondAttribute="trailing" id="h3w-Qu-hwx"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="a9W-4W-vw1" secondAttribute="bottom" priority="999" id="jKt-7N-gHt"/>
-                                                <constraint firstItem="a9W-4W-vw1" firstAttribute="top" secondItem="HDj-km-tMs" secondAttribute="topMargin" id="nby-Oc-HiM"/>
-                                                <constraint firstItem="a9W-4W-vw1" firstAttribute="leading" secondItem="HDj-km-tMs" secondAttribute="leadingMargin" id="oXK-jT-3WS"/>
+                                                <constraint firstAttribute="bottom" secondItem="a9W-4W-vw1" secondAttribute="bottom" priority="999" id="Aff-0v-jns"/>
+                                                <constraint firstItem="a9W-4W-vw1" firstAttribute="leading" secondItem="HDj-km-tMs" secondAttribute="leading" id="NRs-UN-9vy"/>
+                                                <constraint firstAttribute="trailing" secondItem="a9W-4W-vw1" secondAttribute="trailing" id="TJi-Jk-TtG"/>
+                                                <constraint firstItem="a9W-4W-vw1" firstAttribute="top" secondItem="HDj-km-tMs" secondAttribute="top" id="uLc-eH-2q4"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.58188301320000002" green="0.21569153669999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="actionsTableView" destination="bSn-G4-poh" id="PRK-Og-4qF"/>
                                             <outlet property="instructionsTableView" destination="Vad-Cd-pgM" id="OVw-k7-OoL"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="operationToolbox" id="jrg-zq-OVE" userLabel="Operation Toolbox Table View Cell" customClass="OperationToolboxTableViewCell" customModule="TaskCard" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="operationToolbox" id="jrg-zq-OVE" userLabel="Operation Toolbox Table View Cell" customClass="OperationToolboxTableViewCell" customModule="TaskCard" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="241" width="736" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jrg-zq-OVE" id="W8G-jf-QMQ">
