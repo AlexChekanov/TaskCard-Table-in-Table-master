@@ -23,6 +23,16 @@ class AGTableView: UITableView {
         self.tableHeaderView = UIView(frame: .zero)
 //        self.sectionFooterHeight = 0
 //        self.sectionHeaderHeight = 0
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(updateLayout),
+                                               name: .UIContentSizeCategoryDidChange,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(updateLayout),
+                                               name: .UIDeviceOrientationDidChange,
+                                               object: nil)
+        updateLayout()
     }
     
     override open func layoutSubviews() {
@@ -51,8 +61,7 @@ class AGTableView: UITableView {
     }
     
     
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
+    @objc func updateLayout() {
         
         setNeedsLayout()
         
