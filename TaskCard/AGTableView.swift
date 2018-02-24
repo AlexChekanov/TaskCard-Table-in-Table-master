@@ -64,8 +64,7 @@ class AGTableView: UITableView {
     @objc func updateLayout() {
         
         setNeedsLayout()
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: { [weak self] in
             
             self?.reloadData()
         })
