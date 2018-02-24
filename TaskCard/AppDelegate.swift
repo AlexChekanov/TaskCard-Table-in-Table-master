@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  TaskCard
-//
-//  Created by Alexey Chekanov on 2/21/18.
-//  Copyright © 2018 Alexey Chekanov. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
