@@ -4,9 +4,11 @@ class TaskCardViewController: UIViewController {
 
     @IBOutlet weak var operationsTableView: UITableView!
     
-    let stepcellIdentifier = "step"
+    //let stepcellIdentifier = "step"
     
+    let operationNibName = "OperationTableViewCell"
     let operationCellIdentifier = "operation"
+    let operationToolboxNibName = "OperationToolboxTableViewCell"
     let operationToolboxCellIdentifier = "operationToolbox"
     
     override func viewDidLoad() {
@@ -14,6 +16,9 @@ class TaskCardViewController: UIViewController {
         
         operationsTableView.rowHeight = UITableViewAutomaticDimension
         operationsTableView.estimatedRowHeight = 80
+        
+        operationsTableView.register(UINib(nibName: operationNibName, bundle: nil), forCellReuseIdentifier: operationCellIdentifier)
+        operationsTableView.register(UINib(nibName: operationToolboxNibName, bundle: nil), forCellReuseIdentifier: operationToolboxCellIdentifier)
     }
 
     override func didReceiveMemoryWarning() {

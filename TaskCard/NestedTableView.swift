@@ -1,6 +1,6 @@
 import UIKit
 
-class AGTableView: UITableView {
+class NestedTableView: UITableView {
     
     fileprivate var heightConstraint: NSLayoutConstraint!
     

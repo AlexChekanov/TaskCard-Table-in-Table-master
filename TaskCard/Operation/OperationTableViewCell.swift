@@ -1,15 +1,15 @@
 import UIKit
 
 class OperationTableViewCell: UITableViewCell {
-    
+
     enum TableViewKind: String {
         
         case instructions
         case actions
     }
     
-    @IBOutlet weak var instructionsTableView: AGTableView!
-    @IBOutlet weak var actionsTableView: AGTableView!
+    @IBOutlet weak var instructionsTableView: NestedTableView!
+    @IBOutlet weak var actionsTableView: NestedTableView!
     
     let instructionCellIdentifier = "instruction"
     let instructionCellNibName = "InstructionTableViewCell"
@@ -148,5 +148,5 @@ extension OperationTableViewCell: UITableViewDelegate, UITableViewDataSource {
         return tableViewKind
         
     }
+    
 }
-

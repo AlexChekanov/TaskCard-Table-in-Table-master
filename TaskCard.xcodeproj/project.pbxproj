@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3B0FD73B203F8D1E00639A5A /* ActionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0FD73A203F8D1E00639A5A /* ActionTableView.swift */; };
-		3B0FD73D203F8D5000639A5A /* AGTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0FD73C203F8D5000639A5A /* AGTableView.swift */; };
-		3B1C3792203E813000861968 /* OperationToolboxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1C3791203E813000861968 /* OperationToolboxTableViewCell.swift */; };
+		3B0FD73D203F8D5000639A5A /* NestedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0FD73C203F8D5000639A5A /* NestedTableView.swift */; };
 		3B1CE542203E4992000C4FD1 /* InstructionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1CE540203E4992000C4FD1 /* InstructionTableViewCell.swift */; };
 		3B1CE543203E4992000C4FD1 /* InstructionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B1CE541203E4992000C4FD1 /* InstructionTableViewCell.xib */; };
 		3B1CE546203E4A12000C4FD1 /* InstructionToolboxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1CE544203E4A12000C4FD1 /* InstructionToolboxTableViewCell.swift */; };
@@ -23,13 +21,14 @@
 		3B2CA474203E1D1300074C35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B2CA472203E1D1300074C35 /* Main.storyboard */; };
 		3B2CA476203E1D1300074C35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B2CA475203E1D1300074C35 /* Assets.xcassets */; };
 		3B2CA479203E1D1300074C35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B2CA477203E1D1300074C35 /* LaunchScreen.storyboard */; };
-		3B2CA482203E28FB00074C35 /* OperationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2CA480203E28FB00074C35 /* OperationTableViewCell.swift */; };
+		3B9D9DD12041EEE0009AE44E /* OperationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9D9DCF2041EEE0009AE44E /* OperationTableViewCell.swift */; };
+		3B9D9DD22041EEE0009AE44E /* OperationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B9D9DD02041EEE0009AE44E /* OperationTableViewCell.xib */; };
+		3B9D9DD52041EF3D009AE44E /* OperationToolboxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9D9DD32041EF3D009AE44E /* OperationToolboxTableViewCell.swift */; };
+		3B9D9DD62041EF3D009AE44E /* OperationToolboxTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B9D9DD42041EF3D009AE44E /* OperationToolboxTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3B0FD73A203F8D1E00639A5A /* ActionTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTableView.swift; sourceTree = "<group>"; };
-		3B0FD73C203F8D5000639A5A /* AGTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGTableView.swift; sourceTree = "<group>"; };
-		3B1C3791203E813000861968 /* OperationToolboxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationToolboxTableViewCell.swift; sourceTree = "<group>"; };
+		3B0FD73C203F8D5000639A5A /* NestedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedTableView.swift; sourceTree = "<group>"; };
 		3B1CE540203E4992000C4FD1 /* InstructionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionTableViewCell.swift; sourceTree = "<group>"; };
 		3B1CE541203E4992000C4FD1 /* InstructionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstructionTableViewCell.xib; sourceTree = "<group>"; };
 		3B1CE544203E4A12000C4FD1 /* InstructionToolboxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionToolboxTableViewCell.swift; sourceTree = "<group>"; };
@@ -45,7 +44,10 @@
 		3B2CA475203E1D1300074C35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B2CA478203E1D1300074C35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B2CA47A203E1D1300074C35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3B2CA480203E28FB00074C35 /* OperationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationTableViewCell.swift; sourceTree = "<group>"; };
+		3B9D9DCF2041EEE0009AE44E /* OperationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationTableViewCell.swift; sourceTree = "<group>"; };
+		3B9D9DD02041EEE0009AE44E /* OperationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OperationTableViewCell.xib; sourceTree = "<group>"; };
+		3B9D9DD32041EF3D009AE44E /* OperationToolboxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationToolboxTableViewCell.swift; sourceTree = "<group>"; };
+		3B9D9DD42041EF3D009AE44E /* OperationToolboxTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OperationToolboxTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,24 +82,49 @@
 			children = (
 				3B2CA46E203E1D1300074C35 /* AppDelegate.swift */,
 				3B2CA470203E1D1300074C35 /* TaskCardViewController.swift */,
-				3B2CA480203E28FB00074C35 /* OperationTableViewCell.swift */,
+				3B9D9DD72041EF7C009AE44E /* Operation */,
 				3B2CA472203E1D1300074C35 /* Main.storyboard */,
-				3B1C3791203E813000861968 /* OperationToolboxTableViewCell.swift */,
-				3B1CE540203E4992000C4FD1 /* InstructionTableViewCell.swift */,
-				3B1CE544203E4A12000C4FD1 /* InstructionToolboxTableViewCell.swift */,
-				3B1CE545203E4A12000C4FD1 /* InstructionToolboxTableViewCell.xib */,
-				3B1CE541203E4992000C4FD1 /* InstructionTableViewCell.xib */,
-				3B1CE548203E4A63000C4FD1 /* ActionTableViewCell.swift */,
-				3B0FD73A203F8D1E00639A5A /* ActionTableView.swift */,
-				3B0FD73C203F8D5000639A5A /* AGTableView.swift */,
-				3B1CE549203E4A63000C4FD1 /* ActionTableViewCell.xib */,
-				3B1CE54C203E4A73000C4FD1 /* ActionToolboxTableViewCell.swift */,
-				3B1CE54D203E4A73000C4FD1 /* ActionToolboxTableViewCell.xib */,
+				3B0FD73C203F8D5000639A5A /* NestedTableView.swift */,
 				3B2CA475203E1D1300074C35 /* Assets.xcassets */,
 				3B2CA477203E1D1300074C35 /* LaunchScreen.storyboard */,
 				3B2CA47A203E1D1300074C35 /* Info.plist */,
 			);
 			path = TaskCard;
+			sourceTree = "<group>";
+		};
+		3B9D9DD72041EF7C009AE44E /* Operation */ = {
+			isa = PBXGroup;
+			children = (
+				3B9D9DD82041EF97009AE44E /* Action */,
+				3B9D9DD92041EFA6009AE44E /* Instruction */,
+				3B9D9DCF2041EEE0009AE44E /* OperationTableViewCell.swift */,
+				3B9D9DD02041EEE0009AE44E /* OperationTableViewCell.xib */,
+				3B9D9DD32041EF3D009AE44E /* OperationToolboxTableViewCell.swift */,
+				3B9D9DD42041EF3D009AE44E /* OperationToolboxTableViewCell.xib */,
+			);
+			path = Operation;
+			sourceTree = "<group>";
+		};
+		3B9D9DD82041EF97009AE44E /* Action */ = {
+			isa = PBXGroup;
+			children = (
+				3B1CE548203E4A63000C4FD1 /* ActionTableViewCell.swift */,
+				3B1CE549203E4A63000C4FD1 /* ActionTableViewCell.xib */,
+				3B1CE54C203E4A73000C4FD1 /* ActionToolboxTableViewCell.swift */,
+				3B1CE54D203E4A73000C4FD1 /* ActionToolboxTableViewCell.xib */,
+			);
+			path = Action;
+			sourceTree = "<group>";
+		};
+		3B9D9DD92041EFA6009AE44E /* Instruction */ = {
+			isa = PBXGroup;
+			children = (
+				3B1CE540203E4992000C4FD1 /* InstructionTableViewCell.swift */,
+				3B1CE541203E4992000C4FD1 /* InstructionTableViewCell.xib */,
+				3B1CE544203E4A12000C4FD1 /* InstructionToolboxTableViewCell.swift */,
+				3B1CE545203E4A12000C4FD1 /* InstructionToolboxTableViewCell.xib */,
+			);
+			path = Instruction;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,10 +192,12 @@
 				3B1CE547203E4A12000C4FD1 /* InstructionToolboxTableViewCell.xib in Resources */,
 				3B1CE54B203E4A63000C4FD1 /* ActionTableViewCell.xib in Resources */,
 				3B2CA479203E1D1300074C35 /* LaunchScreen.storyboard in Resources */,
+				3B9D9DD62041EF3D009AE44E /* OperationToolboxTableViewCell.xib in Resources */,
 				3B2CA476203E1D1300074C35 /* Assets.xcassets in Resources */,
 				3B1CE54F203E4A73000C4FD1 /* ActionToolboxTableViewCell.xib in Resources */,
 				3B1CE543203E4992000C4FD1 /* InstructionTableViewCell.xib in Resources */,
 				3B2CA474203E1D1300074C35 /* Main.storyboard in Resources */,
+				3B9D9DD22041EEE0009AE44E /* OperationTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,15 +209,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B2CA471203E1D1300074C35 /* TaskCardViewController.swift in Sources */,
-				3B1C3792203E813000861968 /* OperationToolboxTableViewCell.swift in Sources */,
-				3B2CA482203E28FB00074C35 /* OperationTableViewCell.swift in Sources */,
-				3B0FD73B203F8D1E00639A5A /* ActionTableView.swift in Sources */,
 				3B1CE542203E4992000C4FD1 /* InstructionTableViewCell.swift in Sources */,
 				3B2CA46F203E1D1300074C35 /* AppDelegate.swift in Sources */,
+				3B9D9DD12041EEE0009AE44E /* OperationTableViewCell.swift in Sources */,
+				3B9D9DD52041EF3D009AE44E /* OperationToolboxTableViewCell.swift in Sources */,
 				3B1CE546203E4A12000C4FD1 /* InstructionToolboxTableViewCell.swift in Sources */,
 				3B1CE54A203E4A63000C4FD1 /* ActionTableViewCell.swift in Sources */,
 				3B1CE54E203E4A73000C4FD1 /* ActionToolboxTableViewCell.swift in Sources */,
-				3B0FD73D203F8D5000639A5A /* AGTableView.swift in Sources */,
+				3B0FD73D203F8D5000639A5A /* NestedTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
