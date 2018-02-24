@@ -55,7 +55,6 @@ extension TaskCardViewController: UITableViewDelegate, UITableViewDataSource {
         operationsTableView.endUpdates()
     }
     
-    
 }
 
 

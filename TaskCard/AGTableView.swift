@@ -24,14 +24,12 @@ class AGTableView: UITableView {
 //        self.sectionFooterHeight = 0
 //        self.sectionHeaderHeight = 0
         
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(updateLayout),
-                                               name: .UIContentSizeCategoryDidChange,
-                                               object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(updateLayout),
-                                               name: .UIDeviceOrientationDidChange,
-                                               object: nil)
+//        NotificationCenter.default
+//            .addObserver(self, selector: #selector(updateLayout), name: .UIContentSizeCategoryDidChange, object: nil)
+        
+        NotificationCenter.default
+            .addObserver(self, selector: #selector(updateLayout), name: .UIDeviceOrientationDidChange, object: nil)
+        
         updateLayout()
     }
     
@@ -60,7 +58,6 @@ class AGTableView: UITableView {
         }
     }
     
-    
     @objc func updateLayout() {
         
         setNeedsLayout()
@@ -68,5 +65,10 @@ class AGTableView: UITableView {
             
             self?.reloadData()
         })
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        updateLayout()
     }
 }
