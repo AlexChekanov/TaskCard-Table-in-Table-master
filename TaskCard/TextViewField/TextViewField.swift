@@ -31,6 +31,9 @@ class TextViewField: UIView {
     private func commonInit() {
         loadFromNib()
         
+        textView.textContainerInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        placeholderView.textContainerInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        
         clearButton.tintColor = UIColor.lightGray.withAlphaComponent(0.5)
     }
     

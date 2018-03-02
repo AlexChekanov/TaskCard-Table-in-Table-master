@@ -41,7 +41,7 @@
                                 </textView>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" restorationIdentifier="text" scrollEnabled="NO" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PTr-KI-FZX">
                                     <rect key="frame" x="0.0" y="0.0" width="357" height="50"/>
-                                    <color key="backgroundColor" red="1" green="0.59639979009999999" blue="0.2456712133" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     <connections>
@@ -49,7 +49,7 @@
                                     </connections>
                                 </textView>
                             </subviews>
-                            <color key="backgroundColor" cyan="1" magenta="0.0" yellow="0.20000000000000001" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="PTr-KI-FZX" firstAttribute="leading" secondItem="iq9-am-Px8" secondAttribute="leading" id="4e5-nb-jI5"/>
                                 <constraint firstItem="PTr-KI-FZX" firstAttribute="width" secondItem="H4b-rB-Q9t" secondAttribute="width" id="EDs-0u-IkE"/>
@@ -92,7 +92,7 @@
                     </constraints>
                 </stackView>
             </subviews>
-            <color key="backgroundColor" red="0.81127566100000004" green="0.34283441310000001" blue="0.2196407169" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="z4o-0W-1Sy" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" identifier="Stack View.top" id="Kza-GJ-ISE"/>
                 <constraint firstItem="z4o-0W-1Sy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" identifier="Stack View.leading" id="MYh-zG-8JM"/>

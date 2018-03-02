@@ -16,18 +16,18 @@
         <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="action" rowHeight="374" id="KGk-i7-Jjw" customClass="ActionTableViewCell" customModule="TaskCard" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="374"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="373.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="K2v-vZ-KcG">
-                        <rect key="frame" x="16" y="17" width="288" height="346"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="K2v-vZ-KcG">
+                        <rect key="frame" x="0.0" y="11" width="0.0" height="352"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Q7-ja-Wxj" customClass="ActionGroupView" customModule="TaskCard" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="196"/>
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="298"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zC4-fZ-srA" customClass="TextViewField" customModule="TaskCard" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="196" width="50" height="150"/>
+                                <rect key="frame" x="0.0" y="302" width="0.0" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="Note"/>
@@ -42,7 +42,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="K2v-vZ-KcG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" identifier="StackViewLeading" id="9A9-Ca-aon"/>
-                    <constraint firstItem="K2v-vZ-KcG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="6" identifier="StackViewTop" id="Fdo-PJ-RRn"/>
+                    <constraint firstItem="K2v-vZ-KcG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" identifier="StackViewTop" id="Fdo-PJ-RRn"/>
                     <constraint firstAttribute="bottomMargin" secondItem="K2v-vZ-KcG" secondAttribute="bottom" identifier="StackViewBottom" id="Lsh-yE-xji"/>
                     <constraint firstAttribute="trailingMargin" secondItem="K2v-vZ-KcG" secondAttribute="trailing" identifier="StackViewTrailling" id="eEw-Qx-edk"/>
                 </constraints>
