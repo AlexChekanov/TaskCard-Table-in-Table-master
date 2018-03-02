@@ -1,9 +1,8 @@
 import UIKit
 
-class ActionTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var label: UILabel! {
-        
+class ActionTableViewCell: UITableViewCell, UITextViewDelegate {
+    
+    @IBOutlet weak var textView: UITextView! {
         didSet {
             
             let texts: [String] = [
@@ -27,21 +26,106 @@ class ActionTableViewCell: UITableViewCell {
                 "Ut eget ultrices urna, non laoreet odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse porttitor odio condimentum, pharetra elit eget, sagittis velit. In sollicitudin felis nec quam porta congue. Proin congue ipsum at malesuada porttitor. Ut rutrum efficitur tincidunt. Phasellus eros augue, dictum eu maximus et, dignissim et mauris. Suspendisse potenti. In non lacus eget lorem porttitor interdum at sodales velit. Duis sit amet risus orci. Suspendisse elementum ligula ac est auctor, sed commodo velit faucibus."
             ]
             
-            label.text = texts[Int(arc4random_uniform(UInt32(texts.count)))]
-            
+            textView.text = texts[Int(arc4random_uniform(UInt32(texts.count)))]
         }
     }
+    
+    var textViewHeight: CGFloat?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        textView.delegate = self
+        textView.textContainer.heightTracksTextView = true
         
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        // Resolve autolayout bug of iPad input Assistant
+        inputAssistantItem.leadingBarButtonGroups = []
+        inputAssistantItem.trailingBarButtonGroups = []
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        textViewHeight = textView.intrinsicContentSize.height
+    }
+    //    func scrollDelegateTo(rect: CGRect) {
+    //
+    //        if let scrollDelegate =  self.tableView?.delegate as? ScrollDelegate {
+    //            scrollDelegate.scrollTo(rect)
+    //        }
+    //
+    //    }
+    
+    func textViewDidChangeSelection(_ textView: UITextView) {
+        // We need this delay as a partial fix to a long standing bug: to keep the caret inside the `UITextView` always visible
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(200)) {
+            
+            textView.sendScrollRequest(animated: false)
+            
+//            self?.scrollToCaret(textView, animated: false)
+        }
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(640)) {
+            
+            textView.sendScrollRequest(animated: false)
+            //self?.scrollToCaret(textView, animated: false)
+        }
+    }
+    
+//    override func setSelected(_ selected: Bool, animated: Bool) {
+//        super.setSelected(selected, animated: animated)
+//
+//        // Configure the view for the selected state
+//    }
+//
+    func textViewDidChange(_ textView: UITextView) {
+        
+        // Do nothing if the height wasn't change
+        guard textViewHeight != textView.intrinsicContentSize.height else { return }
+        
+        //guard let tableView = tableView else { return }
+        
+        informSizeWasUpdated(object: nil, receivers: nil, identifiers: [UIIdentifiers.actionsTableView, UIIdentifiers.operationsTableView])
+//        selfSizeUpdate(in: tableView)
+        textViewHeight = textView.intrinsicContentSize.height
+    }
+    
+//    func selfSizeUpdate(in tableView: UITableView) {
+//
+//        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(200)) {
+//
+////            ((tableView.delegate as? UITableViewCell)?
+////                .tableView?.delegate as? UpdateDelegate)?
+////                .update(animated: false)
+//        }
+//    }
+    
+//    func scrollToCaret(_ textView: UITextView, animated: Bool) {
+//
+//
+    
+//        guard
+//            let outerCell = tableView?.delegate as? UITableViewCell,
+//            let scrollDelegate = outerCell.tableView?.delegate as? ScrollDelegate else { return }
+//
+//        guard
+//            let currentCursorPosition = textView.selectedTextRange?.start
+//            else { return }
+//
+//        var caret = textView.caretRect(for: currentCursorPosition)
+//        caret.size.height += caret.size.height/2
+//        caret = caret.offsetBy(dx: 0, dy: -caret.size.height/8)
+//
+//        DispatchQueue.main.async {
+//
+//            let scrollRequest = ScrollRequest(view: textView, rect: caret, animated: false)
+//            NotificationCenter.default.post(name: .scrollRequest, object: self, userInfo: ["request": scrollRequest])
+//
+//            //scrollDelegate.scrollTo(caret, in: textView, animated: false)
+//        }
+//    }
+//
+    
 }
+

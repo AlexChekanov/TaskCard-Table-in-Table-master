@@ -76,20 +76,6 @@ class OperationTableViewCell: UITableViewCell {
     }
 }
 
-extension UITableViewCell {
-    
-    var tableView: UITableView? {
-        
-        var view = superview
-        
-        while view != nil && !(view is UITableView) {
-            view = view?.superview
-        }
-        
-        return view as? UITableView
-    }
-}
-
 // MARK: - Delegate & Datasource
 extension OperationTableViewCell: UITableViewDelegate, UITableViewDataSource {
     
@@ -100,9 +86,9 @@ extension OperationTableViewCell: UITableViewDelegate, UITableViewDataSource {
         switch tableViewKind {
             
         case .instructions:
-            return section == 0 ? 12 : 1
+            return section == 0 ? 2 : 1
         case .actions:
-            return section == 0 ? 6 : 1
+            return section == 0 ? 4 : 1
         }
     }
     

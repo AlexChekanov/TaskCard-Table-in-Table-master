@@ -28,10 +28,10 @@
                 </subviews>
                 <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
-                    <constraint firstItem="pkA-PZ-18D" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ALZ-dp-elR"/>
-                    <constraint firstAttribute="trailing" secondItem="pkA-PZ-18D" secondAttribute="trailing" id="AZU-b7-Meb"/>
-                    <constraint firstItem="pkA-PZ-18D" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="q8d-Zl-zn5"/>
-                    <constraint firstAttribute="bottom" secondItem="pkA-PZ-18D" secondAttribute="bottom" id="z2b-Zx-gQo"/>
+                    <constraint firstItem="pkA-PZ-18D" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" identifier="ButtonTop" id="ALZ-dp-elR"/>
+                    <constraint firstAttribute="trailing" secondItem="pkA-PZ-18D" secondAttribute="trailing" identifier="ButtonTrailing" id="AZU-b7-Meb"/>
+                    <constraint firstItem="pkA-PZ-18D" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" identifier="ButtonLeading" id="q8d-Zl-zn5"/>
+                    <constraint firstAttribute="bottom" secondItem="pkA-PZ-18D" secondAttribute="bottom" identifier="ButtonBottom" id="z2b-Zx-gQo"/>
                 </constraints>
             </tableViewCellContentView>
             <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>

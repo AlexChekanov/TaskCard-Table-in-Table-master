@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xN0-h3-69e">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ME2-p9-jOP">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,6 +10,28 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="GxV-Uj-Jgn">
+            <objects>
+                <viewController id="EvP-fU-9Uf" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HoF-2H-Wiy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="4Kr-MF-Dru"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="J4X-ED-lq4">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="vbS-8J-q4Y">
+                            <connections>
+                                <segue destination="NpM-pv-66h" kind="show" id="Ozy-mS-tDV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vz1-KY-Axx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2707.2463768115945" y="-2702.4456521739135"/>
+        </scene>
         <!--Task Card View Controller-->
         <scene sceneID="Tyw-EG-O98">
             <objects>
@@ -18,34 +40,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Yyc-5Q-utP">
-                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ihr-zW-BEQ">
+                                <rect key="frame" x="0.0" y="64" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" identifier="Toolbar.height" id="U3B-E3-cU8"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem style="plain" id="Ycl-w7-yJ9">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="L9o-5J-Msw">
+                                            <rect key="frame" x="20" y="7" width="30" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Edit"/>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="6Zn-He-uil"/>
+                                    <barButtonItem style="plain" id="pgv-zW-Ap1">
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="1Oa-iT-WBd">
+                                            <rect key="frame" x="81" y="7" width="53" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="" image="personal_video_recorder_menu_filled"/>
+                                                <segment title="" image="columns_filled"/>
+                                            </segments>
+                                        </segmentedControl>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="9Xf-3Y-3ge"/>
+                                    <barButtonItem style="plain" id="6SJ-9s-JOL" userLabel="Segmented Controller Item">
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Lsc-Jy-GzW">
+                                            <rect key="frame" x="134" y="7" width="260" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="Instructions"/>
+                                                <segment title="Actions"/>
+                                                <segment title="Both"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="segmentedControllerValueChanged:" destination="NpM-pv-66h" eventType="valueChanged" id="8cX-tg-xhp"/>
+                                            </connections>
+                                        </segmentedControl>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Yyc-5Q-utP" userLabel="Table Stack View">
+                                <rect key="frame" x="0.0" y="108" width="414" height="628"/>
                                 <subviews>
-                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ihr-zW-BEQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="544"/>
-                                        <items>
-                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="9Xf-3Y-3ge"/>
-                                            <barButtonItem style="plain" id="6SJ-9s-JOL" userLabel="Segmented Controller Item">
-                                                <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Lsc-Jy-GzW">
-                                                    <rect key="frame" x="20" y="257" width="374" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <segments>
-                                                        <segment title="Instructions"/>
-                                                        <segment title="Actions"/>
-                                                        <segment title="Both"/>
-                                                    </segments>
-                                                    <connections>
-                                                        <action selector="segmentedControllerValueChanged:" destination="NpM-pv-66h" eventType="valueChanged" id="8cX-tg-xhp"/>
-                                                    </connections>
-                                                </segmentedControl>
-                                            </barButtonItem>
-                                        </items>
-                                    </toolbar>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jdz-e9-ytH" userLabel="Operations Content View">
-                                        <rect key="frame" x="0.0" y="544" width="414" height="128"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="628"/>
                                         <subviews>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="27l-2i-qPK">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="operations" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" alwaysBounceVertical="YES" delaysContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="27l-2i-qPK">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="628"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <outlet property="dataSource" destination="NpM-pv-66h" id="Cyp-E7-69a"/>
@@ -55,10 +98,10 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="27l-2i-qPK" secondAttribute="trailing" id="FUS-4X-V8S"/>
-                                            <constraint firstItem="27l-2i-qPK" firstAttribute="leading" secondItem="Jdz-e9-ytH" secondAttribute="leading" id="Rv5-Td-iw9"/>
-                                            <constraint firstAttribute="bottom" secondItem="27l-2i-qPK" secondAttribute="bottom" id="kY4-ae-grk"/>
-                                            <constraint firstItem="27l-2i-qPK" firstAttribute="top" secondItem="Jdz-e9-ytH" secondAttribute="top" id="mlw-5l-zNq"/>
+                                            <constraint firstAttribute="trailing" secondItem="27l-2i-qPK" secondAttribute="trailing" identifier="Operations Table View.trailing" id="FUS-4X-V8S"/>
+                                            <constraint firstItem="27l-2i-qPK" firstAttribute="leading" secondItem="Jdz-e9-ytH" secondAttribute="leading" identifier="Operations Table View.leading" id="Rv5-Td-iw9"/>
+                                            <constraint firstAttribute="bottom" secondItem="27l-2i-qPK" secondAttribute="bottom" identifier="Operations Table View.bottom" id="kY4-ae-grk"/>
+                                            <constraint firstItem="27l-2i-qPK" firstAttribute="top" secondItem="Jdz-e9-ytH" secondAttribute="top" identifier="Operations Table View.top " id="mlw-5l-zNq"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -66,40 +109,48 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Yyc-5Q-utP" firstAttribute="leading" secondItem="g99-L7-BwJ" secondAttribute="leading" id="EZF-8h-Kls"/>
-                            <constraint firstItem="g99-L7-BwJ" firstAttribute="bottom" secondItem="Yyc-5Q-utP" secondAttribute="bottom" id="Rts-RA-wEY"/>
-                            <constraint firstItem="Yyc-5Q-utP" firstAttribute="trailing" secondItem="g99-L7-BwJ" secondAttribute="trailing" id="cOw-tL-grO"/>
-                            <constraint firstItem="Yyc-5Q-utP" firstAttribute="top" secondItem="g99-L7-BwJ" secondAttribute="top" id="dGt-NX-MZZ"/>
+                            <constraint firstItem="Ihr-zW-BEQ" firstAttribute="trailing" secondItem="g99-L7-BwJ" secondAttribute="trailing" identifier="Toolbar.trailing" id="CyD-PE-liE"/>
+                            <constraint firstItem="Yyc-5Q-utP" firstAttribute="leading" secondItem="g99-L7-BwJ" secondAttribute="leading" identifier="Table Stack View.leading" id="EZF-8h-Kls"/>
+                            <constraint firstItem="g99-L7-BwJ" firstAttribute="bottom" secondItem="Yyc-5Q-utP" secondAttribute="bottom" priority="999" identifier="Table Stack Bottom Constraint" id="Rts-RA-wEY"/>
+                            <constraint firstItem="Ihr-zW-BEQ" firstAttribute="top" secondItem="g99-L7-BwJ" secondAttribute="top" identifier="Toolbar.top" id="UDA-Ab-q8y"/>
+                            <constraint firstItem="Yyc-5Q-utP" firstAttribute="trailing" secondItem="g99-L7-BwJ" secondAttribute="trailing" identifier="Table Stack View.trailing" id="cOw-tL-grO"/>
+                            <constraint firstItem="Ihr-zW-BEQ" firstAttribute="leading" secondItem="g99-L7-BwJ" secondAttribute="leading" identifier="Toolbar.leading" id="qc4-P4-JHU"/>
+                            <constraint firstItem="Yyc-5Q-utP" firstAttribute="top" secondItem="Ihr-zW-BEQ" secondAttribute="bottom" identifier="Table Stack View.top" id="sfA-TX-Qt6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="g99-L7-BwJ"/>
                     </view>
                     <navigationItem key="navigationItem" id="xXy-O0-p4S"/>
                     <connections>
-                        <outlet property="operationsTableView" destination="27l-2i-qPK" id="G5L-iI-wr4"/>
+                        <outlet property="operationsTableView" destination="27l-2i-qPK" id="SBN-gn-z9h"/>
                         <outlet property="segmentedController" destination="Lsc-Jy-GzW" id="Gfg-ES-hk3"/>
+                        <outlet property="tableStackBottomConstraint" destination="Rts-RA-wEY" id="0gy-6H-yr9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1zf-cq-5nT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1765.7608695652175" y="-2452.1739130434785"/>
+            <point key="canvasLocation" x="-1775" y="-2698"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="MW4-3w-H2N">
+        <scene sceneID="Foc-6U-2hf">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xN0-h3-69e" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ME2-p9-jOP" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Svd-ZP-kn5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hwJ-2S-TUF">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="NpM-pv-66h" kind="relationship" relationship="rootViewController" id="q3b-pm-bND"/>
+                        <segue destination="EvP-fU-9Uf" kind="relationship" relationship="rootViewController" id="0Ke-Dn-3ta"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="asf-7t-cPf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DEB-K7-Adh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2427" y="-2451"/>
+            <point key="canvasLocation" x="-3406" y="-2698"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="columns_filled" width="12" height="12"/>
+        <image name="personal_video_recorder_menu_filled" width="12" height="12"/>
+    </resources>
 </document>

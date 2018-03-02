@@ -21,16 +21,13 @@ class NestedTableView: UITableView {
         self.keyboardDismissMode = .onDrag
         self.tableFooterView = UIView(frame: .zero)
         self.tableHeaderView = UIView(frame: .zero)
-//        self.sectionFooterHeight = 0
-//        self.sectionHeaderHeight = 0
-        
-//        NotificationCenter.default
-//            .addObserver(self, selector: #selector(updateLayout), name: .UIContentSizeCategoryDidChange, object: nil)
-        
+      
         NotificationCenter.default
-            .addObserver(self, selector: #selector(updateLayout), name: .UIDeviceOrientationDidChange, object: nil)
+        .addObserver(self, selector: #selector(reloadDelayed), name: .viewWillTransition, object: nil)
         
-        updateLayout()
+        subscribeToSizeChanges()
+        
+        //reloadDelayed()
     }
     
     override open func layoutSubviews() {
@@ -58,17 +55,22 @@ class NestedTableView: UITableView {
         }
     }
     
-    @objc func updateLayout() {
-        
-        setNeedsLayout()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: { [weak self] in
+    func subscribeToSizeChanges() {
+        NotificationCenter.default.addObserver(forName: .sizeUpdateRequest, object: nil, queue: nil) { [weak self] (notification) in
             
-            self?.reloadData()
-        })
+            guard let isAddressee =  self?.checkIsAdressee(of: notification), isAddressee else { return }
+            
+            self?.update(animated: false)
+//            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100), execute: {
+//
+//            })
+        }
     }
+    
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        updateLayout()
+        reloadDelayed()
     }
+    
 }

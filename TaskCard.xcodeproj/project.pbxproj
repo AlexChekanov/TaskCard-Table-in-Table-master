@@ -16,11 +16,17 @@
 		3B1CE54B203E4A63000C4FD1 /* ActionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B1CE549203E4A63000C4FD1 /* ActionTableViewCell.xib */; };
 		3B1CE54E203E4A73000C4FD1 /* ActionToolboxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1CE54C203E4A73000C4FD1 /* ActionToolboxTableViewCell.swift */; };
 		3B1CE54F203E4A73000C4FD1 /* ActionToolboxTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B1CE54D203E4A73000C4FD1 /* ActionToolboxTableViewCell.xib */; };
+		3B1D288D204612AD00509D03 /* ActionGroupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B1D288C204612AD00509D03 /* ActionGroupView.xib */; };
+		3B1D288F204612DE00509D03 /* ActionGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1D288E204612DE00509D03 /* ActionGroupView.swift */; };
+		3B218B802044A28000B36C94 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B218B7F2044A28000B36C94 /* Extensions.swift */; };
 		3B2CA46F203E1D1300074C35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2CA46E203E1D1300074C35 /* AppDelegate.swift */; };
 		3B2CA471203E1D1300074C35 /* TaskCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2CA470203E1D1300074C35 /* TaskCardViewController.swift */; };
 		3B2CA474203E1D1300074C35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B2CA472203E1D1300074C35 /* Main.storyboard */; };
 		3B2CA476203E1D1300074C35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B2CA475203E1D1300074C35 /* Assets.xcassets */; };
 		3B2CA479203E1D1300074C35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B2CA477203E1D1300074C35 /* LaunchScreen.storyboard */; };
+		3B3D14D620488289005E9502 /* TextViewField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B3D14D520488289005E9502 /* TextViewField.xib */; };
+		3B3D14DA20488499005E9502 /* TextViewField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3D14D920488499005E9502 /* TextViewField.swift */; };
+		3B3D14DD2048D0AA005E9502 /* UIIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3D14DC2048D0AA005E9502 /* UIIdentifiers.swift */; };
 		3B9D9DD12041EEE0009AE44E /* OperationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9D9DCF2041EEE0009AE44E /* OperationTableViewCell.swift */; };
 		3B9D9DD22041EEE0009AE44E /* OperationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B9D9DD02041EEE0009AE44E /* OperationTableViewCell.xib */; };
 		3B9D9DD52041EF3D009AE44E /* OperationToolboxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9D9DD32041EF3D009AE44E /* OperationToolboxTableViewCell.swift */; };
@@ -37,6 +43,9 @@
 		3B1CE549203E4A63000C4FD1 /* ActionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActionTableViewCell.xib; sourceTree = "<group>"; };
 		3B1CE54C203E4A73000C4FD1 /* ActionToolboxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionToolboxTableViewCell.swift; sourceTree = "<group>"; };
 		3B1CE54D203E4A73000C4FD1 /* ActionToolboxTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActionToolboxTableViewCell.xib; sourceTree = "<group>"; };
+		3B1D288C204612AD00509D03 /* ActionGroupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActionGroupView.xib; sourceTree = "<group>"; };
+		3B1D288E204612DE00509D03 /* ActionGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionGroupView.swift; sourceTree = "<group>"; };
+		3B218B7F2044A28000B36C94 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3B2CA46B203E1D1300074C35 /* TaskCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B2CA46E203E1D1300074C35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B2CA470203E1D1300074C35 /* TaskCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCardViewController.swift; sourceTree = "<group>"; };
@@ -44,6 +53,9 @@
 		3B2CA475203E1D1300074C35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B2CA478203E1D1300074C35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B2CA47A203E1D1300074C35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B3D14D520488289005E9502 /* TextViewField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextViewField.xib; sourceTree = "<group>"; };
+		3B3D14D920488499005E9502 /* TextViewField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewField.swift; sourceTree = "<group>"; };
+		3B3D14DC2048D0AA005E9502 /* UIIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIIdentifiers.swift; sourceTree = "<group>"; };
 		3B9D9DCF2041EEE0009AE44E /* OperationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationTableViewCell.swift; sourceTree = "<group>"; };
 		3B9D9DD02041EEE0009AE44E /* OperationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OperationTableViewCell.xib; sourceTree = "<group>"; };
 		3B9D9DD32041EF3D009AE44E /* OperationToolboxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationToolboxTableViewCell.swift; sourceTree = "<group>"; };
@@ -84,12 +96,34 @@
 				3B2CA470203E1D1300074C35 /* TaskCardViewController.swift */,
 				3B9D9DD72041EF7C009AE44E /* Operation */,
 				3B2CA472203E1D1300074C35 /* Main.storyboard */,
+				3B218B7F2044A28000B36C94 /* Extensions.swift */,
+				3B3D14DC2048D0AA005E9502 /* UIIdentifiers.swift */,
 				3B0FD73C203F8D5000639A5A /* NestedTableView.swift */,
+				3B3D14DB20488871005E9502 /* TextViewField */,
+				3B368FF720473926002DD75D /* ActionGroup */,
 				3B2CA475203E1D1300074C35 /* Assets.xcassets */,
 				3B2CA477203E1D1300074C35 /* LaunchScreen.storyboard */,
 				3B2CA47A203E1D1300074C35 /* Info.plist */,
 			);
 			path = TaskCard;
+			sourceTree = "<group>";
+		};
+		3B368FF720473926002DD75D /* ActionGroup */ = {
+			isa = PBXGroup;
+			children = (
+				3B1D288C204612AD00509D03 /* ActionGroupView.xib */,
+				3B1D288E204612DE00509D03 /* ActionGroupView.swift */,
+			);
+			path = ActionGroup;
+			sourceTree = "<group>";
+		};
+		3B3D14DB20488871005E9502 /* TextViewField */ = {
+			isa = PBXGroup;
+			children = (
+				3B3D14D520488289005E9502 /* TextViewField.xib */,
+				3B3D14D920488499005E9502 /* TextViewField.swift */,
+			);
+			path = TextViewField;
 			sourceTree = "<group>";
 		};
 		3B9D9DD72041EF7C009AE44E /* Operation */ = {
@@ -192,6 +226,8 @@
 				3B1CE547203E4A12000C4FD1 /* InstructionToolboxTableViewCell.xib in Resources */,
 				3B1CE54B203E4A63000C4FD1 /* ActionTableViewCell.xib in Resources */,
 				3B2CA479203E1D1300074C35 /* LaunchScreen.storyboard in Resources */,
+				3B3D14D620488289005E9502 /* TextViewField.xib in Resources */,
+				3B1D288D204612AD00509D03 /* ActionGroupView.xib in Resources */,
 				3B9D9DD62041EF3D009AE44E /* OperationToolboxTableViewCell.xib in Resources */,
 				3B2CA476203E1D1300074C35 /* Assets.xcassets in Resources */,
 				3B1CE54F203E4A73000C4FD1 /* ActionToolboxTableViewCell.xib in Resources */,
@@ -209,13 +245,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B2CA471203E1D1300074C35 /* TaskCardViewController.swift in Sources */,
+				3B1D288F204612DE00509D03 /* ActionGroupView.swift in Sources */,
 				3B1CE542203E4992000C4FD1 /* InstructionTableViewCell.swift in Sources */,
 				3B2CA46F203E1D1300074C35 /* AppDelegate.swift in Sources */,
 				3B9D9DD12041EEE0009AE44E /* OperationTableViewCell.swift in Sources */,
 				3B9D9DD52041EF3D009AE44E /* OperationToolboxTableViewCell.swift in Sources */,
+				3B218B802044A28000B36C94 /* Extensions.swift in Sources */,
+				3B3D14DD2048D0AA005E9502 /* UIIdentifiers.swift in Sources */,
 				3B1CE546203E4A12000C4FD1 /* InstructionToolboxTableViewCell.swift in Sources */,
 				3B1CE54A203E4A63000C4FD1 /* ActionTableViewCell.swift in Sources */,
 				3B1CE54E203E4A73000C4FD1 /* ActionToolboxTableViewCell.swift in Sources */,
+				3B3D14DA20488499005E9502 /* TextViewField.swift in Sources */,
 				3B0FD73D203F8D5000639A5A /* NestedTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
