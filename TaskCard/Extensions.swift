@@ -22,18 +22,18 @@ extension UITableViewCell {
 
 
 // --------
-
-protocol ScrollDelegate {
-    
-    func scrollTo(_ rect: CGRect, in view: UIView, animated: Bool)
-}
-
-protocol UpdateDelegate {
-    
-    //    func update(animated: Bool)
-    func update(at indexPaths: [IndexPath], animated: Bool)
-}
-
+//
+//protocol ScrollDelegate {
+//    
+//    func scrollTo(_ rect: CGRect, in view: UIView, animated: Bool)
+//}
+//
+//protocol UpdateDelegate {
+//    
+//    //    func update(animated: Bool)
+//    func update(at indexPaths: [IndexPath], animated: Bool)
+//}
+//
 
 // --------
 

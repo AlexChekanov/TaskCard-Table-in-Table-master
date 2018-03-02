@@ -8,7 +8,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,37 +20,34 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="373.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="K2v-vZ-KcG">
-                        <rect key="frame" x="16" y="23" width="288" height="340"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="K2v-vZ-KcG">
+                        <rect key="frame" x="16" y="17" width="288" height="346"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Q7-ja-Wxj" customClass="ActionGroupView" customModule="TaskCard" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="332"/>
+                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="196"/>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" scrollEnabled="NO" keyboardDismissMode="interactive" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uhZ-Ho-1vY">
-                                <rect key="frame" x="0.0" y="340" width="288" height="0.0"/>
-                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
-                            </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zC4-fZ-srA" customClass="TextViewField" customModule="TaskCard" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="196" width="50" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="Note"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <constraints>
                             <constraint firstItem="7Q7-ja-Wxj" firstAttribute="width" relation="lessThanOrEqual" secondItem="K2v-vZ-KcG" secondAttribute="width" id="0um-Ri-IRZ"/>
-                            <constraint firstItem="uhZ-Ho-1vY" firstAttribute="width" secondItem="K2v-vZ-KcG" secondAttribute="width" identifier="TextViewWidth" id="9RI-AW-ROt"/>
+                            <constraint firstItem="zC4-fZ-srA" firstAttribute="width" relation="lessThanOrEqual" secondItem="K2v-vZ-KcG" secondAttribute="width" id="8BS-8o-rde"/>
                         </constraints>
                     </stackView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="K2v-vZ-KcG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" identifier="StackViewLeading" id="9A9-Ca-aon"/>
-                    <constraint firstItem="K2v-vZ-KcG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="12" identifier="StackViewTop" id="Fdo-PJ-RRn"/>
+                    <constraint firstItem="K2v-vZ-KcG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="6" identifier="StackViewTop" id="Fdo-PJ-RRn"/>
                     <constraint firstAttribute="bottomMargin" secondItem="K2v-vZ-KcG" secondAttribute="bottom" identifier="StackViewBottom" id="Lsh-yE-xji"/>
                     <constraint firstAttribute="trailingMargin" secondItem="K2v-vZ-KcG" secondAttribute="trailing" identifier="StackViewTrailling" id="eEw-Qx-edk"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <connections>
-                <outlet property="textView" destination="uhZ-Ho-1vY" id="Oml-cJ-an0"/>
-            </connections>
             <point key="canvasLocation" x="34" y="219"/>
         </tableViewCell>
     </objects>

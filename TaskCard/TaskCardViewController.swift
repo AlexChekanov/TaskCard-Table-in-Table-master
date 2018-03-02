@@ -155,41 +155,16 @@ extension TaskCardViewController {
 extension TaskCardViewController {
     
     func subscribeToScrollRequests() {
-        
         NotificationCenter.default.addObserver(forName: .scrollRequest, object: nil, queue: nil) { [weak self] (notification) in
-            
-//            guard let isAddressee =  self?.operationsTableView.checkIsAdressee(of: notification), isAddressee else { return }
             
             guard let data = notification.userInfo,
                 let request = data["request"] as? ScrollRequest else { return }
             
             DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100), execute: { [weak self] in
-                 self?.operationsTableView.scrollTo(request.rect, in: request.view, animated: request.animated)
+                self?.operationsTableView.scrollTo(request.rect, in: request.view, animated: request.animated)
                 
             })
         }
     }
 }
-
-extension TaskCardViewController: UpdateDelegate {
-    
-    func update(at indexPaths: [IndexPath], animated: Bool) {
-        
-        let animation = animated ? UITableViewRowAnimation.automatic : UITableViewRowAnimation.none
-        
-        operationsTableView.reloadRows(at: indexPaths, with: animation)
-    }
-    
-    //    func update(animated: Bool) {
-    //
-    //        let currentAnimationState = UIView.areAnimationsEnabled
-    //        defer { UIView.setAnimationsEnabled(currentAnimationState) }
-    //        UIView.setAnimationsEnabled(animated)
-    //
-    //        operationsTableView.beginUpdates()
-    //        operationsTableView.endUpdates()
-    //    }
-}
-
-//
 

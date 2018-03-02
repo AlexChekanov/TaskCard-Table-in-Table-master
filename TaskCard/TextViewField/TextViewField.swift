@@ -16,6 +16,7 @@ class TextViewField: UIView {
     @IBOutlet weak var clearButton: UIButton!
     
     var textViewHeight: CGFloat?
+    var placeholderViewHeight: CGFloat?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,13 +32,11 @@ class TextViewField: UIView {
         loadFromNib()
         
         clearButton.tintColor = UIColor.lightGray.withAlphaComponent(0.5)
-        
-        textViewHeight = textView.intrinsicContentSize.height
     }
     
     @IBAction func clearButtonPressed(_ sender: UIButton) {
         textView.text = nil
-        placeholderView.isHidden = false
+        textViewDidChange(textView)
     }
 }
 
@@ -49,7 +48,6 @@ extension TextViewField: UITextViewDelegate {
         // We need this delay as a partial fix to a long standing bug: to keep the caret inside the `UITextView` always visible
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(200)) {
             textView.sendScrollRequest(animated: false)
-            //self?.scrollToCaret(textView, animated: false)
         }
     }
     
@@ -61,19 +59,10 @@ extension TextViewField: UITextViewDelegate {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(640)) {
             textView.sendScrollRequest(animated: false)
-            //self?.scrollToCaret(textView, animated: false)
         }
         
         clearButton.isHidden = textView.text.count == 0
     }
-    
-    
-    //    override func setSelected(_ selected: Bool, animated: Bool) {
-    //        super.setSelected(selected, animated: animated)
-    //
-    //        // Configure the view for the selected state
-    //    }
-    //
     
     func textViewDidEndEditing(_ textView: UITextView) {
         clearButton.isHidden = true
@@ -83,31 +72,32 @@ extension TextViewField: UITextViewDelegate {
         
         // Main textView should have tag = 1, placeholder = 0
         // Placeholder view sholdn't be editable
-        guard textView.tag == 1 else { return }
+        //guard textView.tag == 1 else { return }
         
         // Check placeholder visibility
-        placeholderView.isHidden = textView.text.count > 0
+        //placeholderView.isHidden = textView.text.count > 0
+        
+        if textView.text.count > 0 {
+            placeholderView.text = nil
+        } else { placeholderView.text = placeholderText }
+        
         // Check clearButton visibility
         clearButton.isHidden = textView.text.count == 0
         
         // Check the textViewHeight was changed
         // Do nothing if the height wasn't change
-        guard textViewHeight != textView.intrinsicContentSize.height else { return }
+        guard
+        textViewHeight != textView.intrinsicContentSize.height ||
+        placeholderViewHeight != placeholderView.intrinsicContentSize.height
         
-        //guard let tableView = tableView else { return }
+        else { return }
+        
+        textView.setNeedsLayout()
+        placeholderView.setNeedsLayout()
         
         informSizeWasUpdated(object: nil, receivers: nil, identifiers: [UIIdentifiers.actionsTableView, UIIdentifiers.operationsTableView])
-        //        selfSizeUpdate(in: tableView)
+        
         textViewHeight = textView.intrinsicContentSize.height
+        placeholderViewHeight = placeholderView.intrinsicContentSize.height
     }
-    
-//    func postSizeWasUpdated() {
-//
-//        let notification = Notification(name: .sizeUpdateRequest)
-//
-//        NotificationCenter.default.post(notification)
-//    }
-    
 }
-
-// scroll
