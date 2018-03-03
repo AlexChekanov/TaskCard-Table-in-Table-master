@@ -18,12 +18,12 @@ class NestedTableView: UITableView {
     
     func defaultInit(){
         
-        self.keyboardDismissMode = .onDrag
+        //self.keyboardDismissMode = .onDrag
         self.tableFooterView = UIView(frame: .zero)
         self.tableHeaderView = UIView(frame: .zero)
       
-        NotificationCenter.default
-        .addObserver(self, selector: #selector(reloadDelayed), name: .viewWillTransition, object: nil)
+//        NotificationCenter.default
+//        .addObserver(self, selector: #selector(updateSize), name: .viewWillTransition, object: nil)
         
         subscribeToSizeChanges()
         
@@ -70,7 +70,18 @@ class NestedTableView: UITableView {
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        reloadDelayed()
+        
+        //updateSize()
+//        endEditing(true)
+//        setNeedsLayout()
+//        reloadData()
+    }
+    
+    @objc func updateSize() {
+        endEditing(true)
+        //setNeedsLayout()
+        //update(animated: true)
+        //reloadData()
     }
     
 }

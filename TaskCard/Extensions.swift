@@ -186,15 +186,6 @@ extension UITableView {
         endUpdates()
     }
     
-    @objc func reloadDelayed(_ milliseconds: Int = 100) {
-        
-        setNeedsLayout()
-        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(milliseconds), execute: { [weak self] in
-            
-            self?.reloadData()
-        })
-    }
-    
     func scrollTo(_ rect: CGRect, in view: UIView, animated: Bool) {
         
         let rectToScroll = view.convert(rect, to: self)

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,22 +20,21 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tca-ML-G1F">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                        <state key="normal" title="Button">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tca-ML-G1F">
+                        <rect key="frame" x="16" y="11" width="288" height="22"/>
+                        <state key="normal">
                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="tca-ML-G1F" secondAttribute="bottom" id="2Im-Ha-HVj"/>
-                    <constraint firstAttribute="trailing" secondItem="tca-ML-G1F" secondAttribute="trailing" id="4jm-pd-jJf"/>
-                    <constraint firstItem="tca-ML-G1F" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="KTG-b8-p2R"/>
-                    <constraint firstItem="tca-ML-G1F" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="fjC-Nz-BvK"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="tca-ML-G1F" secondAttribute="bottom" id="05c-Ey-8Lc"/>
+                    <constraint firstItem="tca-ML-G1F" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="cC1-Mz-ok8"/>
+                    <constraint firstItem="tca-ML-G1F" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="csm-iJ-CU5"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="tca-ML-G1F" secondAttribute="trailing" id="e9e-nc-zBN"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="0.81127566100000004" green="0.34283441310000001" blue="0.2196407169" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
         </tableViewCell>
     </objects>

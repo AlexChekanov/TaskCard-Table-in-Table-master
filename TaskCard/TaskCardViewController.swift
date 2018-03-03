@@ -18,7 +18,6 @@ class TaskCardViewController: UIViewController {
     var shouldHide: (instructions: Bool, actions: Bool) = (instructions: false, actions: false) {
         
         didSet {
-            
             reloadDataWithScrollingToTop()
         }
     }
@@ -84,6 +83,17 @@ extension TaskCardViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func updateDataWithScrollingToTop() {
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100), execute: { [weak self] in
+            self?.operationsTableView.update(animated: false)
+            self?.operationsTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+        })
+//        operationsTableView.setNeedsLayout()
+//        operationsTableView.reloadData()
+//        operationsTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+    }
+    
     func reloadDataWithScrollingToTop() {
         
         operationsTableView.reloadData()
@@ -93,7 +103,7 @@ extension TaskCardViewController: UITableViewDelegate, UITableViewDataSource {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         
-        reloadDataWithScrollingToTop()
+        updateDataWithScrollingToTop()
         
         let notification = Notification(name: .viewWillTransition, object: nil)
         NotificationCenter.default.post(notification)
