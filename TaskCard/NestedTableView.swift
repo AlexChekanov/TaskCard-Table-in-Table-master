@@ -1,4 +1,5 @@
 import UIKit
+import UIExtensions
 
 class NestedTableView: UITableView {
     

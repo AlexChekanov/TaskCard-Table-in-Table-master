@@ -21,7 +21,6 @@
 		3B1CFF23204A08BC005F1D47 /* CheckboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1CFF22204A08BC005F1D47 /* CheckboxView.swift */; };
 		3B1D288D204612AD00509D03 /* ActionGroupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B1D288C204612AD00509D03 /* ActionGroupView.xib */; };
 		3B1D288F204612DE00509D03 /* ActionGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1D288E204612DE00509D03 /* ActionGroupView.swift */; };
-		3B218B802044A28000B36C94 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B218B7F2044A28000B36C94 /* Extensions.swift */; };
 		3B2CA46F203E1D1300074C35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2CA46E203E1D1300074C35 /* AppDelegate.swift */; };
 		3B2CA471203E1D1300074C35 /* TaskCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2CA470203E1D1300074C35 /* TaskCardViewController.swift */; };
 		3B2CA474203E1D1300074C35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B2CA472203E1D1300074C35 /* Main.storyboard */; };
@@ -30,11 +29,51 @@
 		3B3D14D620488289005E9502 /* TextViewField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B3D14D520488289005E9502 /* TextViewField.xib */; };
 		3B3D14DA20488499005E9502 /* TextViewField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3D14D920488499005E9502 /* TextViewField.swift */; };
 		3B3D14DD2048D0AA005E9502 /* UIIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3D14DC2048D0AA005E9502 /* UIIdentifiers.swift */; };
+		3B426D7220509CE9008CA989 /* UIExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B426D6F20509CE1008CA989 /* UIExtensions.framework */; };
+		3B426D7320509CE9008CA989 /* UIExtensions.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3B426D6F20509CE1008CA989 /* UIExtensions.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3B9D9DD12041EEE0009AE44E /* OperationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9D9DCF2041EEE0009AE44E /* OperationTableViewCell.swift */; };
 		3B9D9DD22041EEE0009AE44E /* OperationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B9D9DD02041EEE0009AE44E /* OperationTableViewCell.xib */; };
 		3B9D9DD52041EF3D009AE44E /* OperationToolboxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9D9DD32041EF3D009AE44E /* OperationToolboxTableViewCell.swift */; };
 		3B9D9DD62041EF3D009AE44E /* OperationToolboxTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B9D9DD42041EF3D009AE44E /* OperationToolboxTableViewCell.xib */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3B426D6E20509CE1008CA989 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B426D6920509CE0008CA989 /* UIExtensions.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3BA13A18204DE5E200213EB6;
+			remoteInfo = UIExtensions;
+		};
+		3B426D7020509CE1008CA989 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B426D6920509CE0008CA989 /* UIExtensions.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3BA13A21204DE5E300213EB6;
+			remoteInfo = UIExtensionsTests;
+		};
+		3B426D7420509CE9008CA989 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B426D6920509CE0008CA989 /* UIExtensions.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 3BA13A17204DE5E200213EB6;
+			remoteInfo = UIExtensions;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3B900073204DE3240018CAE5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3B426D7320509CE9008CA989 /* UIExtensions.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3B0FD73C203F8D5000639A5A /* NestedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedTableView.swift; sourceTree = "<group>"; };
@@ -51,7 +90,6 @@
 		3B1CFF22204A08BC005F1D47 /* CheckboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxView.swift; sourceTree = "<group>"; };
 		3B1D288C204612AD00509D03 /* ActionGroupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActionGroupView.xib; sourceTree = "<group>"; };
 		3B1D288E204612DE00509D03 /* ActionGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionGroupView.swift; sourceTree = "<group>"; };
-		3B218B7F2044A28000B36C94 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3B2CA46B203E1D1300074C35 /* TaskCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B2CA46E203E1D1300074C35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B2CA470203E1D1300074C35 /* TaskCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCardViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +100,7 @@
 		3B3D14D520488289005E9502 /* TextViewField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextViewField.xib; sourceTree = "<group>"; };
 		3B3D14D920488499005E9502 /* TextViewField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewField.swift; sourceTree = "<group>"; };
 		3B3D14DC2048D0AA005E9502 /* UIIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIIdentifiers.swift; sourceTree = "<group>"; };
+		3B426D6920509CE0008CA989 /* UIExtensions.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UIExtensions.xcodeproj; path = "../../Library/Mobile Documents/com~apple~CloudDocs/Development/Toolbox/UIExtensions/UIExtensions.xcodeproj"; sourceTree = "<group>"; };
 		3B9D9DCF2041EEE0009AE44E /* OperationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationTableViewCell.swift; sourceTree = "<group>"; };
 		3B9D9DD02041EEE0009AE44E /* OperationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OperationTableViewCell.xib; sourceTree = "<group>"; };
 		3B9D9DD32041EF3D009AE44E /* OperationToolboxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationToolboxTableViewCell.swift; sourceTree = "<group>"; };
@@ -73,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B426D7220509CE9008CA989 /* UIExtensions.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +133,7 @@
 			children = (
 				3B2CA46D203E1D1300074C35 /* TaskCard */,
 				3B2CA46C203E1D1300074C35 /* Products */,
+				3B450BC2204DDE9F00367753 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,7 +152,6 @@
 				3B2CA470203E1D1300074C35 /* TaskCardViewController.swift */,
 				3B9D9DD72041EF7C009AE44E /* Operation */,
 				3B2CA472203E1D1300074C35 /* Main.storyboard */,
-				3B218B7F2044A28000B36C94 /* Extensions.swift */,
 				3B3D14DC2048D0AA005E9502 /* UIIdentifiers.swift */,
 				3B0FD73C203F8D5000639A5A /* NestedTableView.swift */,
 				3B1CFF1C204A0462005F1D47 /* DottedLineView.swift */,
@@ -141,6 +181,23 @@
 				3B3D14D920488499005E9502 /* TextViewField.swift */,
 			);
 			path = TextViewField;
+			sourceTree = "<group>";
+		};
+		3B426D6A20509CE0008CA989 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3B426D6F20509CE1008CA989 /* UIExtensions.framework */,
+				3B426D7120509CE1008CA989 /* UIExtensionsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3B450BC2204DDE9F00367753 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3B426D6920509CE0008CA989 /* UIExtensions.xcodeproj */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		3B9D9DD72041EF7C009AE44E /* Operation */ = {
@@ -188,10 +245,12 @@
 				3B2CA467203E1D1300074C35 /* Sources */,
 				3B2CA468203E1D1300074C35 /* Frameworks */,
 				3B2CA469203E1D1300074C35 /* Resources */,
+				3B900073204DE3240018CAE5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3B426D7520509CE9008CA989 /* PBXTargetDependency */,
 			);
 			name = TaskCard;
 			productName = TaskCard;
@@ -228,12 +287,35 @@
 			mainGroup = 3B2CA462203E1D1300074C35;
 			productRefGroup = 3B2CA46C203E1D1300074C35 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 3B426D6A20509CE0008CA989 /* Products */;
+					ProjectRef = 3B426D6920509CE0008CA989 /* UIExtensions.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				3B2CA46A203E1D1300074C35 /* TaskCard */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		3B426D6F20509CE1008CA989 /* UIExtensions.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = UIExtensions.framework;
+			remoteRef = 3B426D6E20509CE1008CA989 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3B426D7120509CE1008CA989 /* UIExtensionsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UIExtensionsTests.xctest;
+			remoteRef = 3B426D7020509CE1008CA989 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		3B2CA469203E1D1300074C35 /* Resources */ = {
@@ -270,7 +352,6 @@
 				3B2CA46F203E1D1300074C35 /* AppDelegate.swift in Sources */,
 				3B9D9DD12041EEE0009AE44E /* OperationTableViewCell.swift in Sources */,
 				3B9D9DD52041EF3D009AE44E /* OperationToolboxTableViewCell.swift in Sources */,
-				3B218B802044A28000B36C94 /* Extensions.swift in Sources */,
 				3B3D14DD2048D0AA005E9502 /* UIIdentifiers.swift in Sources */,
 				3B1CE546203E4A12000C4FD1 /* InstructionToolboxTableViewCell.swift in Sources */,
 				3B1CE54A203E4A63000C4FD1 /* ActionTableViewCell.swift in Sources */,
@@ -281,6 +362,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3B426D7520509CE9008CA989 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = UIExtensions;
+			targetProxy = 3B426D7420509CE9008CA989 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3B2CA472203E1D1300074C35 /* Main.storyboard */ = {
@@ -412,9 +501,14 @@
 		3B2CA47E203E1D1400074C35 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JH6R8SSABL;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = TaskCard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gestalt.TaskCard;
@@ -427,9 +521,14 @@
 		3B2CA47F203E1D1400074C35 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JH6R8SSABL;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = TaskCard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gestalt.TaskCard;

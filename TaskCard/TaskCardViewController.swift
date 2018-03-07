@@ -1,4 +1,5 @@
 import UIKit
+import UIExtensions
 
 class TaskCardViewController: UIViewController {
     
@@ -42,6 +43,7 @@ class TaskCardViewController: UIViewController {
         operationsTableView.register(UINib(nibName: operationToolboxNibName, bundle: nil), forCellReuseIdentifier: operationToolboxCellIdentifier)
         
         segmentedController.selectedSegmentIndex = 2
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -147,34 +149,30 @@ extension TaskCardViewController {
 }
 
 // Subscribe to size change requests
-extension TaskCardViewController {
+extension TaskCardViewController: UISizeUpdateDelegate {
     
-    func subscribeToSizeUpdateRequests() {
-        NotificationCenter.default.addObserver(forName: .sizeUpdateRequest, object: nil, queue: nil) { [weak self] (notification) in
-            
-            guard let isAddressee =  self?.operationsTableView.checkIsAdressee(of: notification), isAddressee else { return }
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100), execute: {
-                self?.operationsTableView.update(animated: false)
-            })
-        }
+    var addresseeVerificationFunction: (Notification) -> Bool {
+        return self.operationsTableView.checkIsAdressee
+    }
+
+    var sizeUpdateFunction: (Bool) -> () {
+        return self.operationsTableView.update
+    }
+    
+    var sizeUpdateRequest: Notification.Name {
+        return .sizeUpdateRequest
     }
 }
 
 // Subscribe to scroll requests
-extension TaskCardViewController {
+extension TaskCardViewController: UIScrollRequestDelegate {
     
-    func subscribeToScrollRequests() {
-        NotificationCenter.default.addObserver(forName: .scrollRequest, object: nil, queue: nil) { [weak self] (notification) in
-            
-            guard let data = notification.userInfo,
-                let request = data["request"] as? ScrollRequest else { return }
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100), execute: { [weak self] in
-                self?.operationsTableView.scrollTo(request.rect, in: request.view, animated: request.animated)
-                
-            })
-        }
+    var scrollRequest: Notification.Name {
+        return .scrollRequest
     }
+    
+    var scrollingFunction: (CGRect, UIView, Bool) -> () {
+        return self.operationsTableView.scrollTo
+    }
+    
 }
-

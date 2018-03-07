@@ -1,4 +1,5 @@
 import UIKit
+import UIExtensions
 
 @IBDesignable
 class CheckboxView: UIView {
@@ -41,6 +42,7 @@ class CheckboxView: UIView {
     private func commonInit() {
         loadFromNib()
         state = .todo
+        
     }
     
     @IBAction func checkboxButtonPressed(_ sender: Any) {

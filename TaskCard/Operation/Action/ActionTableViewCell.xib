@@ -27,7 +27,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="egR-L5-6wQ">
                                 <rect key="frame" x="0.0" y="0.0" width="288" height="206"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZsY-Nw-3Q2">
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ZsY-Nw-3Q2">
                                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="103"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s2v-p6-GSF" customClass="CheckboxView" customModule="TaskCard" customModuleProvider="target">
@@ -39,7 +39,7 @@
                                             </view>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Hyb-Jn-krD">
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Hyb-Jn-krD">
                                         <rect key="frame" x="0.0" y="103" width="288" height="103"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tBp-f8-XfM" userLabel="BulletSpacer">

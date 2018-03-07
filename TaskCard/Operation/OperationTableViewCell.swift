@@ -105,15 +105,19 @@ extension OperationTableViewCell: UITableViewDelegate, UITableViewDataSource {
         case .instructions:
             let cell = indexPath.section == 0 ? instructionsTableView.dequeueReusableCell(withIdentifier: instructionCellIdentifier, for: indexPath) :
                 instructionsTableView.dequeueReusableCell(withIdentifier: instructionToolboxCellIdentifier, for: indexPath)
-            instructionsTableView.setNeedsLayout() //layoutSubviews()
+            instructionsTableView.setNeedsLayout()
+            //layoutSubviews()
             self.tableView?.reloadData()
+            
             return cell
             
         case .actions:
             let cell = indexPath.section == 0 ? actionsTableView.dequeueReusableCell(withIdentifier: actionCellIdentifier, for: indexPath) :
                 actionsTableView.dequeueReusableCell(withIdentifier: actionToolboxCellIdentifier, for: indexPath)
-            actionsTableView.setNeedsLayout() //layoutSubviews()
+            actionsTableView.setNeedsLayout()
+            //layoutSubviews()
             self.tableView?.reloadData()
+            
             return cell
         }
     }

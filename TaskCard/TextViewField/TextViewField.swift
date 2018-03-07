@@ -1,7 +1,7 @@
 import UIKit
 
 @IBDesignable
-class TextViewField: UIView {
+class TextViewField: UIControl {//} UIView {
     
     @IBInspectable
     var placeholderText: String? {
@@ -18,6 +18,8 @@ class TextViewField: UIView {
     var textViewHeight: CGFloat?
     var placeholderViewHeight: CGFloat?
     
+    var textViewIsInEditingMode: Bool = false
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -31,10 +33,10 @@ class TextViewField: UIView {
     private func commonInit() {
         loadFromNib()
         
-        textView.textContainerInset = UIEdgeInsetsMake(0, 0, 0, 0)
-        placeholderView.textContainerInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        //textView.textContainerInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        //placeholderView.textContainerInset = UIEdgeInsetsMake(0, 0, 0, 0)
         
-        clearButton.tintColor = UIColor.lightGray.withAlphaComponent(0.5)
+        //clearButton.tintColor = UIColor.lightGray//.withAlphaComponent(0.5)
     }
     
     @IBAction func clearButtonPressed(_ sender: UIButton) {
@@ -49,8 +51,10 @@ extension TextViewField: UITextViewDelegate {
     
     func textViewDidChangeSelection(_ textView: UITextView) {
         // We need this delay as a partial fix to a long standing bug: to keep the caret inside the `UITextView` always visible
-        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(200)) {
-            textView.sendScrollRequest(animated: false)
+        guard textViewIsInEditingMode == true else { return }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100)) {
+            textView.sendScrollRequest(animated: false, identifiers: [UIIdentifiers.operationsTableView])
         }
     }
     
@@ -60,14 +64,18 @@ extension TextViewField: UITextViewDelegate {
         // Placeholder view sholdn't be editable
         guard textView.tag == 1 else { return }
         
+        textViewIsInEditingMode = true
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(640)) {
-            textView.sendScrollRequest(animated: false)
+            textView.sendScrollRequest(animated: false, identifiers: [UIIdentifiers.operationsTableView])
         }
         
         clearButton.isHidden = textView.text.count == 0
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
+        
+        textViewIsInEditingMode = true
         clearButton.isHidden = true
     }
     
