@@ -91,9 +91,9 @@ extension TaskCardViewController: UITableViewDelegate, UITableViewDataSource {
             self?.operationsTableView.update(animated: false)
             self?.operationsTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
         })
-//        operationsTableView.setNeedsLayout()
-//        operationsTableView.reloadData()
-//        operationsTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+        //        operationsTableView.setNeedsLayout()
+        //        operationsTableView.reloadData()
+        //        operationsTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
     }
     
     func reloadDataWithScrollingToTop() {
@@ -126,25 +126,14 @@ extension TaskCardViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 // MARK: - Manage keyboard
-extension TaskCardViewController {
+extension TaskCardViewController: UIKeyboardResizeDelegate {
     
-    func subscribeToKeyboardNotifications() {
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
+    var bottomConstraint: NSLayoutConstraint {
+        return tableStackBottomConstraint
     }
     
-    // Keyboard Notifications
-    @objc func keyboardWillShow(notification: NSNotification) {
-        guard let keyboardHeight = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height,
-            let tableStackBottomConstraintInitialConstant = tableStackBottomConstraintInitialConstant  else { return }
-        
-        tableStackBottomConstraint.constant = keyboardHeight + tableStackBottomConstraintInitialConstant
-    }
-    
-    @objc func keyboardWillHide(notification: NSNotification) {
-        
-        tableStackBottomConstraint.constant = tableStackBottomConstraintInitialConstant ?? 0
+    var bottomConstraintInitialConstant: CGFloat {
+        return tableStackBottomConstraintInitialConstant ?? 0
     }
 }
 
@@ -154,7 +143,7 @@ extension TaskCardViewController: UISizeUpdateDelegate {
     var addresseeVerificationFunction: (Notification) -> Bool {
         return self.operationsTableView.checkIsAdressee
     }
-
+    
     var sizeUpdateFunction: (Bool) -> () {
         return self.operationsTableView.update
     }
